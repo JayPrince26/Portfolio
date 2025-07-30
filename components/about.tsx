@@ -70,7 +70,27 @@ export function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
-          <div className="space-y-6 md:space-y-8 order-2 lg:order-1 animate-slide-left">
+          {/* Left Column - Profile Picture and Description */}
+          <div className="space-y-6 md:space-y-8 order-1 lg:order-1 animate-slide-left">
+            {/* Profile Picture - Centered and Prominent */}
+            <div className="flex justify-center">
+              <div className="relative group">
+                <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-red-500 to-red-700 p-1 animate-glow">
+                  <div className="w-full h-full rounded-full bg-black/90 backdrop-blur-md border border-red-500/30 flex items-center justify-center overflow-hidden">
+                    {/* Profile Picture */}
+                    <img
+                      src="/prince4.jpg"
+                      alt="John Prince Victorino"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
             <div className="prose prose-lg text-gray-300">
               <p className="text-lg md:text-xl leading-relaxed font-medium">
                 Hello! I'm{" "}
@@ -100,7 +120,10 @@ export function About() {
                 to life.
               </p>
             </div>
+          </div>
 
+          {/* Right Column - Skills and Personal Info Cards */}
+          <div className="space-y-6 md:space-y-8 order-2 lg:order-2 animate-slide-right">
             {/* Skills Highlights */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-4 text-center hover:neon-glow transition-all duration-300">
@@ -113,27 +136,6 @@ export function About() {
                 <Smartphone className="w-8 h-8 text-red-400 mx-auto mb-2" />
                 <div className="text-sm font-bold text-gray-300">
                   MOBILE APP DEVELOPMENT
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6 md:space-y-8 order-1 lg:order-2 animate-slide-right">
-            {/* Profile Picture */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative group">
-                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-r from-red-500 to-red-700 p-1 animate-glow">
-                  <div className="w-full h-full rounded-full bg-black/90 backdrop-blur-md border border-red-500/30 flex items-center justify-center overflow-hidden">
-                    {/* Profile Picture */}
-                    <img
-                      src="/prince4.jpg"
-                      alt="John Prince Victorino"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
               </div>
             </div>
