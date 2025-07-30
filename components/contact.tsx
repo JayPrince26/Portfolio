@@ -64,8 +64,8 @@ export function Contact() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "johnprince.victorino@gmail.com",
-      href: "mailto:johnprince.victorino@gmail.com",
+      value: "victorinoprince.fe.dev@gmail.com",
+      href: "mailto:victorinoprince.fe.dev@gmail.com",
       color: "from-red-500 to-red-600",
       bgColor: "bg-red-500/20",
     },
@@ -80,8 +80,8 @@ export function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+63 917 123 4567",
-      href: "tel:+639171234567",
+      value: "+63 961 339 4268",
+      href: "tel:+639613394268",
       color: "from-red-700 to-red-800",
       bgColor: "bg-red-700/20",
     },
@@ -94,7 +94,6 @@ export function Contact() {
       href: "https://github.com/johnprincevictorino",
       color: "hover:text-gray-300",
       bgColor: "hover:bg-gray-800",
-      followers: "1.2k+",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
@@ -102,7 +101,6 @@ export function Contact() {
       href: "https://linkedin.com/in/johnprincevictorino",
       color: "hover:text-red-400",
       bgColor: "hover:bg-red-900/30",
-      followers: "500+",
     },
     {
       icon: <ExternalLink className="w-6 h-6" />,
@@ -110,7 +108,6 @@ export function Contact() {
       href: "https://johnprince.dev",
       color: "hover:text-blue-400",
       bgColor: "hover:bg-blue-900/30",
-      followers: "Live",
     },
   ];
 
@@ -189,9 +186,6 @@ export function Contact() {
                   >
                     <div className="mb-2">{social.icon}</div>
                     <div className="text-xs font-bold">{social.name}</div>
-                    <div className="text-xs text-gray-400">
-                      {social.followers}
-                    </div>
                   </a>
                 ))}
               </div>

@@ -72,7 +72,7 @@ export function Navigation() {
           </div>
 
           {/* CTA Button */}
-          <div
+          {/*  <div
             className="hidden md:block animate-slide-down"
             style={{ animationDelay: "0.8s" }}
           >
@@ -80,7 +80,7 @@ export function Navigation() {
               <Zap className="w-4 h-4 mr-2 animate-pulse-slow" />
               HIRE ME
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Navigation Button */}
           <Button

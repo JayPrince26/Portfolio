@@ -175,6 +175,14 @@ export function Hero() {
                 size="lg"
                 variant="outline"
                 className="group relative overflow-hidden border-red-500/50 text-red-400 hover:text-white px-8 py-4 text-lg font-black rounded-lg transition-all duration-300 hover:bg-red-600/20"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/resume.pdf";
+                  link.download = "John_Prince_Victorino_Resume.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <span className="relative z-10 flex items-center gap-3">
                   <ExternalLink className="w-5 h-5" />
@@ -208,13 +216,13 @@ export function Hero() {
               style={{ animationDelay: "0.7s" }}
             >
               <div className="text-center">
-                <div className="text-2xl font-black text-white mb-1">4+</div>
+                <div className="text-2xl font-black text-white mb-1">1+</div>
                 <div className="text-xs text-gray-400 font-medium">
-                  YEARS OF EXPERIENCE
+                  YEAR OF EXPERIENCE
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-black text-white mb-1">75+</div>
+                <div className="text-2xl font-black text-white mb-1">8+</div>
                 <div className="text-xs text-gray-400 font-medium">
                   PROJECTS COMPLETED
                 </div>

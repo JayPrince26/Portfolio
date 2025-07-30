@@ -25,7 +25,7 @@ export function Projects() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Admin Dashboard",
       description:
         "A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
       image: "/placeholder.jpg",
@@ -76,9 +76,9 @@ export function Projects() {
     },
     {
       id: 4,
-      title: "Mobile Banking App",
+      title: "Consulting App",
       description:
-        "Cross-platform mobile banking application with secure authentication and real-time transactions.",
+        "Cross-platform mobile accounting consulting application with secure client management and real-time financial reporting.",
       image: "/placeholder.jpg",
       category: "mobile",
       technologies: ["React Native", "Expo", "Firebase", "Redux", "TypeScript"],
@@ -256,7 +256,7 @@ export function Projects() {
                 </div>
 
                 {/* Stats */}
-                <div className="flex items-center justify-between text-sm text-gray-400">
+                {/*   <div className="flex items-center justify-between text-sm text-gray-400">
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
@@ -271,7 +271,7 @@ export function Projects() {
                     <Calendar className="w-4 h-4" />
                     <span className="font-bold">{project.year}</span>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">

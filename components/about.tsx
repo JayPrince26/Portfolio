@@ -11,49 +11,47 @@ import {
   Briefcase,
   Globe,
   Users,
+  Smartphone,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function About() {
   const experiences = [
     {
-      role: "Senior Frontend Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      description: "Leading frontend development for enterprise applications",
-      icon: <Briefcase className="w-5 h-5" />,
-    },
-    {
-      role: "Full Stack Developer",
-      company: "Digital Innovations Inc",
-      period: "2021 - 2022",
+      role: "Part-time Frontend Developer",
+      company: "Freelance Projects",
+      period: "April 2024 - Present",
       description:
-        "Developed scalable web applications using modern technologies",
+        "Developing responsive websites and mobile app interfaces using React and modern web technologies",
       icon: <Code className="w-5 h-5" />,
     },
     {
-      role: "Frontend Developer",
-      company: "WebStudio Pro",
-      period: "2020 - 2021",
-      description: "Created responsive and interactive user interfaces",
-      icon: <Globe className="w-5 h-5" />,
+      role: "Mobile App Developer",
+      company: "Personal Projects",
+      period: "April 2024 - Present",
+      description:
+        "Building mobile applications with React Native and web-based mobile solutions",
+      icon: <Smartphone className="w-5 h-5" />,
     },
   ];
 
   const achievements = [
     {
-      title: "Performance Excellence",
-      description: "Achieved 95+ Lighthouse scores across all projects",
+      title: "Learning Excellence",
+      description:
+        "Quickly mastered React, Next.js, and modern frontend technologies",
       icon: <Award className="w-6 h-6" />,
     },
     {
-      title: "Team Leadership",
-      description: "Led development teams of 5+ developers",
+      title: "Project Delivery",
+      description:
+        "Successfully completed 8+ freelance projects with positive feedback",
       icon: <Users className="w-6 h-6" />,
     },
     {
       title: "Client Satisfaction",
-      description: "100% client satisfaction rate over 3 years",
+      description:
+        "Maintained 100% client satisfaction rate on all freelance projects",
       icon: <Heart className="w-6 h-6" />,
     },
   ];
@@ -79,26 +77,27 @@ export function About() {
                 <span className="font-bold text-red-100">
                   John Prince Victorino
                 </span>
-                , a passionate and experienced frontend developer with over 4
-                years of expertise in creating exceptional digital experiences.
-                I specialize in building modern, scalable web applications that
+                , a passionate and dedicated frontend developer who started my
+                journey in April 2024. I specialize in building modern,
+                responsive web applications and mobile app interfaces that
                 combine cutting-edge technology with intuitive design.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">
                 My journey in software development began with a curiosity for
-                creating things that people love to use. Today, I focus on
+                creating things that people love to use. Currently, I focus on
                 React, Next.js, and TypeScript to build performant, accessible,
-                and user-centric applications. I believe in writing clean,
-                maintainable code and staying current with industry best
-                practices.
+                and user-centric applications. I work part-time on freelance
+                projects, developing websites and mobile app interfaces for
+                various clients.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">
                 When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or mentoring junior
-                developers. I'm always excited to take on new challenges and
-                collaborate with teams to bring innovative ideas to life.
+                contributing to open-source projects, or learning new frameworks
+                to expand my skillset. I'm always excited to take on new
+                challenges and collaborate with teams to bring innovative ideas
+                to life.
               </p>
             </div>
 
@@ -111,15 +110,34 @@ export function About() {
                 </div>
               </div>
               <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-4 text-center hover:neon-glow-red transition-all duration-300">
-                <Target className="w-8 h-8 text-red-400 mx-auto mb-2" />
+                <Smartphone className="w-8 h-8 text-red-400 mx-auto mb-2" />
                 <div className="text-sm font-bold text-gray-300">
-                  UI/UX DESIGN
+                  MOBILE APP DEVELOPMENT
                 </div>
               </div>
             </div>
           </div>
 
           <div className="space-y-6 md:space-y-8 order-1 lg:order-2 animate-slide-right">
+            {/* Profile Picture */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative group">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-r from-red-500 to-red-700 p-1 animate-glow">
+                  <div className="w-full h-full rounded-full bg-black/90 backdrop-blur-md border border-red-500/30 flex items-center justify-center overflow-hidden">
+                    {/* Profile Picture */}
+                    <img
+                      src="/prince4.jpg"
+                      alt="John Prince Victorino"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
             {/* Personal Info Cards */}
             <Card className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow group">
               <CardContent className="p-6">
@@ -242,11 +260,11 @@ export function About() {
           style={{ animationDelay: "0.8s" }}
         >
           <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow transition-all duration-300">
-            <div className="text-3xl font-black text-white mb-2">4+</div>
-            <div className="text-gray-300 font-bold">YEARS OF EXPERIENCE</div>
+            <div className="text-3xl font-black text-white mb-2">1+</div>
+            <div className="text-gray-300 font-bold">YEAR OF EXPERIENCE</div>
           </div>
           <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow-red transition-all duration-300">
-            <div className="text-3xl font-black text-white mb-2">75+</div>
+            <div className="text-3xl font-black text-white mb-2">8+</div>
             <div className="text-gray-300 font-bold">PROJECTS COMPLETED</div>
           </div>
           <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow-dark-red transition-all duration-300">
