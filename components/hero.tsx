@@ -245,13 +245,13 @@ export function Hero() {
               style={{ animationDelay: "0.6s" }}
             >
               <a
-                href="#"
+                href="https://github.com/JayPrince26"
                 className="p-3 bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-full text-slate-600 hover:text-sky-400 hover:bg-sky-200/40 transition-all duration-300"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/victorino-john-prince-g-a5b419305"
                 className="p-3 bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-full text-slate-600 hover:text-sky-400 hover:bg-sky-200/40 transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5" />

@@ -91,14 +91,14 @@ export function Contact() {
     {
       icon: <Github className="w-6 h-6" />,
       name: "GitHub",
-      href: "https://github.com/johnprincevictorino",
+      href: "https://github.com/JayPrince26",
       color: "hover:text-slate-700",
       bgColor: "hover:bg-slate-100",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/johnprincevictorino",
+      href: "https://www.linkedin.com/in/victorino-john-prince-g-a5b419305",
       color: "hover:text-sky-500",
       bgColor: "hover:bg-sky-100",
     },
