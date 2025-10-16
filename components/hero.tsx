@@ -1,13 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
-  ChevronDown,
-  Code,
-  Zap,
   ArrowRight,
   Shield,
-  Target,
   Github,
   Linkedin,
   ExternalLink,
@@ -25,25 +22,76 @@ export function Hero() {
 
   const projects = [
     {
-      name: "E-Commerce Platform",
-      tech: "Next.js • TypeScript • Tailwind",
-      description: "Full-stack e-commerce with real-time inventory",
-      stars: 127,
-      link: "#",
+      name: "Iskanme",
+      tech: ["Next.js", "TypeScript", "Supabase"],
+      description:
+        "Rental marketplace matching property owners with verified renters and streamlined onboarding.",
+      stars: 4.9,
+      link: "https://www.iskanme.app",
+      ctaLabel: "View Site",
+      image: "/projects/iskan_web.jpg",
+      imageAlt: "Iskanme rental marketplace website preview",
+      imageFit: "cover" as const,
     },
     {
-      name: "Task Management App",
-      tech: "React • Node.js • MongoDB",
-      description: "Collaborative project management with real-time updates",
-      stars: 89,
-      link: "#",
+      name: "House of Mix",
+      tech: ["Next.js", "Tailwind CSS", "Contentful"],
+      description:
+        "Experiential web presence for a mixology collective featuring menus, bookings, and editorial content.",
+      stars: 4.8,
+      link: "https://houseofmix.club",
+      ctaLabel: "Explore Website",
+      image: "/projects/houseofmix_web.jpg",
+      imageAlt: "House of Mix website hero section",
+      imageFit: "cover" as const,
     },
     {
-      name: "Portfolio Website",
-      tech: "Next.js • Framer Motion • GSAP",
-      description: "Interactive portfolio with advanced animations",
-      stars: 45,
-      link: "#",
+      name: "Outsourcee Landing",
+      tech: ["Next.js", "Tailwind CSS", "Vercel"],
+      description:
+        "Lead-generation site for the Outsourcee talent marketplace with testimonials and conversion funnels.",
+      stars: 4.7,
+      link: "https://outsourcee.app",
+      ctaLabel: "Visit Landing Page",
+      image: "/projects/outsourcee_web.jpg",
+      imageAlt: "Outsourcee marketing site home screen",
+      imageFit: "cover" as const,
+    },
+    {
+      name: "Outsourcee Mobile",
+      tech: ["React Native", "Expo", "Firebase"],
+      description:
+        "Android app connecting Filipino service providers with global clients via secure messaging and proposals.",
+      stars: 4.6,
+      link: "https://play.google.com/store/apps/details?id=com.comptrolla.outsourcee&pcampaignid=web_share",
+      ctaLabel: "View on Google Play",
+      image: "/projects/outsourcee_app.jpg",
+      imageAlt: "Outsourcee mobile app interface preview",
+      imageFit: "cover" as const,
+    },
+    {
+      name: "KBahay Service",
+      tech: ["React Native", "Expo", "Stripe"],
+      description:
+        "On-demand home services marketplace offering seamless bookings, professional profiles, and in-app payments.",
+      stars: 4.5,
+      link: "https://play.google.com/store/apps/details?id=com.kbahayservice&pcampaignid=web_share",
+      ctaLabel: "View on Google Play",
+      image: "/projects/kbahay_app.jpg",
+      imageAlt: "KBahay Service application badge",
+      imageFit: "contain" as const,
+    },
+    {
+      name: "SnapTrail",
+      tech: ["React Native", "Firebase", "Zustand"],
+      description:
+        "Travel journaling companion that captures photo stories, itineraries, and shareable highlights for every trip.",
+      stars: 4.7,
+      link: "https://play.google.com/store/apps/details?id=com.snaptrail&pcampaignid=web_share",
+      ctaLabel: "View on Google Play",
+      image: "/projects/snaptrail.png",
+      imageAlt: "SnapTrail travel companion app logo",
+      imageFit: "contain" as const,
     },
   ];
 
@@ -250,7 +298,7 @@ export function Hero() {
                   <div className="flex items-center gap-1 text-yellow-400">
                     <Star className="w-4 h-4 fill-current" />
                     <span className="text-sm font-bold">
-                      {projects[currentProject].stars}
+                      {projects[currentProject].stars.toFixed(1)}
                     </span>
                   </div>
                 </div>
@@ -258,33 +306,39 @@ export function Hero() {
                   {projects[currentProject].description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {projects[currentProject].tech
-                    .split("•")
-                    .map((tech, index) => (
+                  {projects[currentProject].tech.map((tech, index) => (
                       <span
                         key={index}
                         className="px-2 py-1 text-xs font-bold rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30"
                       >
-                        {tech.trim()}
+                        {tech}
                       </span>
                     ))}
                 </div>
               </div>
 
               {/* Project Preview */}
-              <div className="relative h-48 bg-gradient-to-br from-sky-100 to-sky-200 rounded-lg border border-sky-500/20 overflow-hidden group-hover:border-sky-500/40 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-transparent" />
-                <div className="absolute top-3 left-3 flex gap-2">
-                  <div className="w-3 h-3 bg-sky-500 rounded-full" />
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                  <div className="w-3 h-3 bg-green-500 rounded-full" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Code className="w-12 h-12 text-sky-400 mx-auto mb-2" />
-                    <p className="text-slate-500 text-sm">Project Preview</p>
-                  </div>
-                </div>
+              <div
+                className={`relative h-48 rounded-lg border border-sky-500/20 overflow-hidden transition-all duration-300 group-hover:border-sky-500/40 ${
+                  projects[currentProject].imageFit === "contain"
+                    ? "bg-white/90 flex items-center justify-center"
+                    : ""
+                }`}
+              >
+                <Image
+                  src={projects[currentProject].image}
+                  alt={projects[currentProject].imageAlt}
+                  fill
+                  className={
+                    projects[currentProject].imageFit === "contain"
+                      ? "object-contain"
+                      : "object-cover"
+                  }
+                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 90vw"
+                />
+                {projects[currentProject].imageFit !== "contain" && (
+                  <div className="absolute inset-0 bg-gradient-to-b from-sky-900/20 via-transparent to-slate-900/30" />
+                )}
               </div>
 
               <div className="mt-4 flex items-center justify-between">
@@ -295,8 +349,15 @@ export function Hero() {
                 <Button
                   size="sm"
                   className="bg-sky-600 hover:bg-sky-700 text-white"
+                  asChild
                 >
-                  View Live
+                  <a
+                    href={projects[currentProject].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {projects[currentProject].ctaLabel ?? "View Live"}
+                  </a>
                 </Button>
               </div>
             </div>
@@ -312,11 +373,21 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+     {/*  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
         <div className="w-6 h-10 border-2 border-sky-500 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-sky-500 rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+

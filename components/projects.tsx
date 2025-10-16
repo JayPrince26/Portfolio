@@ -1,161 +1,161 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
-import {
-  ExternalLink,
-  Github,
-  Star,
-  Eye,
-  Code,
-  Globe,
-  Smartphone,
-  Database,
-  Palette,
-  Zap,
-  ArrowRight,
-  Calendar,
-  Users,
-} from "lucide-react";
+import { ExternalLink, Globe, Smartphone, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
+type ProjectCategory = "web" | "mobile";
+
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  imageFit?: "cover" | "contain";
+  category: ProjectCategory;
+  technologies: string[];
+  liveUrl: string;
+  primaryLabel: string;
+  secondaryUrl?: string;
+  secondaryLabel?: string;
+  featured?: boolean;
+  year: string;
+};
+
+const categoryLabels: Record<ProjectCategory, string> = {
+  web: "Web App",
+  mobile: "Mobile App",
+};
+
+const projectData: Project[] = [
+  {
+    id: 1,
+    title: "Iskanme",
+    description:
+      "Digital rental marketplace for renters and property owners with verified listings, dashboards, and guided onboarding flows.",
+    image: "/projects/iskan_web.jpg",
+    imageAlt: "Iskanme web application home screen showcasing rental listings",
+    imageFit: "cover",
+    category: "web",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    liveUrl: "https://www.iskanme.app",
+    primaryLabel: "Visit Site",
+    featured: true,
+    year: "2024",
+  },
+  {
+    id: 2,
+    title: "House of Mix",
+    description:
+      "Mixology collective website featuring seasonal menus, event bookings, and a CMS-powered blog for cocktail enthusiasts.",
+    image: "/projects/houseofmix_web.jpg",
+    imageAlt: "House of Mix hero section featuring call-to-action and DJ imagery",
+    imageFit: "cover",
+    category: "web",
+    technologies: ["Next.js", "Contentful", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://houseofmix.club",
+    primaryLabel: "Visit Site",
+    featured: true,
+    year: "2024",
+  },
+  {
+    id: 3,
+    title: "Outsourcee Landing",
+    description:
+      "Conversion-focused marketing site for the Outsourcee talent marketplace highlighting services, testimonials, and lead capture.",
+    image: "/projects/outsourcee_web.jpg",
+    imageAlt: "Outsourcee marketing site hero featuring headline and mobile mockups",
+    imageFit: "cover",
+    category: "web",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://outsourcee.app",
+    primaryLabel: "Visit Site",
+    featured: false,
+    year: "2024",
+  },
+  {
+    id: 4,
+    title: "Outsourcee Mobile",
+    description:
+      "Android app connecting Filipino service providers with global clients, including job browsing, proposals, and secure chat.",
+    image: "/projects/outsourcee_app.jpg",
+    imageAlt: "Outsourcee mobile app screens showing available experts and reviews",
+    imageFit: "cover",
+    category: "mobile",
+    technologies: ["React Native", "Expo", "TypeScript", "Firebase"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.comptrolla.outsourcee&pcampaignid=web_share",
+    primaryLabel: "View on Google Play",
+    featured: false,
+    year: "2024",
+  },
+  {
+    id: 5,
+    title: "SnapTrail",
+    description:
+      "Travel companion app that lets adventurers capture photo journals, track itineraries, and share curated trip highlights.",
+    image: "/projects/snaptrail.png",
+    imageAlt: "SnapTrail logo featuring stylised mountain within a rounded glyph",
+    imageFit: "contain",
+    category: "mobile",
+    technologies: ["React Native", "Expo", "Firebase", "Zustand"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.snaptrail&pcampaignid=web_share",
+    primaryLabel: "View on Google Play",
+    featured: false,
+    year: "2024",
+  },
+  {
+    id: 6,
+    title: "KBahay Service",
+    description:
+      "Home services marketplace for local professionals offering on-demand bookings, service tracking, and secure in-app messaging.",
+    image: "/projects/kbahay_app.jpg",
+    imageAlt: "KBahay Service application logo featuring a house and handshake",
+    imageFit: "contain",
+    category: "mobile",
+    technologies: ["React Native", "Expo", "Firebase", "Stripe"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.kbahayservice&pcampaignid=web_share",
+    primaryLabel: "View on Google Play",
+    featured: false,
+    year: "2024",
+  },
+];
+
+const categoryOrder: ProjectCategory[] = ["web", "mobile"];
+
+const filters = [
+  { id: "all" as const, label: "All Projects", count: projectData.length },
+  ...categoryOrder.map((category) => ({
+    id: category,
+    label: category === "web" ? "Web Apps" : "Mobile Apps",
+    count: projectData.filter((project) => project.category === category).length,
+  })),
+];
+
+const getCategoryIcon = (category: ProjectCategory) => {
+  switch (category) {
+    case "web":
+      return <Globe className="w-5 h-5" />;
+    case "mobile":
+      return <Smartphone className="w-5 h-5" />;
+    default:
+      return <ExternalLink className="w-5 h-5" />;
+  }
+};
+
 export function Projects() {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const projects = [
-    {
-      id: 1,
-      title: "Admin Dashboard",
-      description:
-        "A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-      image: "/placeholder.jpg",
-      category: "fullstack",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Stripe",
-        "MongoDB",
-      ],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/johnprince/ecommerce",
-      stars: 127,
-      views: 2.5,
-      featured: true,
-      year: "2024",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "Collaborative project management tool with real-time updates, team collaboration, and progress tracking.",
-      image: "/placeholder.jpg",
-      category: "fullstack",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "JWT"],
-      liveUrl: "https://taskmanager-demo.com",
-      githubUrl: "https://github.com/johnprince/taskmanager",
-      stars: 89,
-      views: 1.8,
-      featured: true,
-      year: "2024",
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description:
-        "Interactive portfolio website with advanced animations, smooth transitions, and modern design.",
-      image: "/placeholder.jpg",
-      category: "frontend",
-      technologies: ["Next.js", "Framer Motion", "GSAP", "Tailwind CSS"],
-      liveUrl: "https://johnprince.dev",
-      githubUrl: "https://github.com/johnprince/portfolio",
-      stars: 45,
-      views: 1.2,
-      featured: false,
-      year: "2024",
-    },
-    {
-      id: 4,
-      title: "Consulting App",
-      description:
-        "Cross-platform mobile accounting consulting application with secure client management and real-time financial reporting.",
-      image: "/placeholder.jpg",
-      category: "mobile",
-      technologies: ["React Native", "Expo", "Firebase", "Redux", "TypeScript"],
-      liveUrl: "https://banking-app-demo.com",
-      githubUrl: "https://github.com/johnprince/banking-app",
-      stars: 156,
-      views: 3.1,
-      featured: false,
-      year: "2023",
-    },
-    {
-      id: 5,
-      title: "AI Chat Application",
-      description:
-        "Real-time chat application with AI-powered responses and natural language processing.",
-      image: "/placeholder.jpg",
-      category: "fullstack",
-      technologies: ["Next.js", "OpenAI API", "Socket.io", "PostgreSQL"],
-      liveUrl: "https://ai-chat-demo.com",
-      githubUrl: "https://github.com/johnprince/ai-chat",
-      stars: 203,
-      views: 4.2,
-      featured: true,
-      year: "2023",
-    },
-    {
-      id: 6,
-      title: "Weather Dashboard",
-      description:
-        "Interactive weather dashboard with real-time data, charts, and location-based forecasts.",
-      image: "/placeholder.jpg",
-      category: "frontend",
-      technologies: ["React", "Chart.js", "Weather API", "Geolocation"],
-      liveUrl: "https://weather-dashboard-demo.com",
-      githubUrl: "https://github.com/johnprince/weather-dashboard",
-      stars: 67,
-      views: 1.5,
-      featured: false,
-      year: "2023",
-    },
-  ];
-
-  const filters = [
-    { id: "all", label: "All Projects", count: projects.length },
-    {
-      id: "frontend",
-      label: "Frontend",
-      count: projects.filter((p) => p.category === "frontend").length,
-    },
-    {
-      id: "fullstack",
-      label: "Full Stack",
-      count: projects.filter((p) => p.category === "fullstack").length,
-    },
-    {
-      id: "mobile",
-      label: "Mobile",
-      count: projects.filter((p) => p.category === "mobile").length,
-    },
-  ];
-
-  const filteredProjects = projects.filter(
-    (project) => activeFilter === "all" || project.category === activeFilter
+  const [activeFilter, setActiveFilter] = useState<ProjectCategory | "all">(
+    "all"
   );
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "frontend":
-        return <Globe className="w-5 h-5" />;
-      case "fullstack":
-        return <Code className="w-5 h-5" />;
-      case "mobile":
-        return <Smartphone className="w-5 h-5" />;
-      default:
-        return <Code className="w-5 h-5" />;
-    }
-  };
+  const filteredProjects = projectData.filter(
+    (project) => activeFilter === "all" || project.category === activeFilter
+  );
 
   return (
     <section
@@ -169,33 +169,31 @@ export function Projects() {
           </h2>
           <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-700 mx-auto rounded-full mb-6 animate-glow" />
           <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto px-4 font-medium">
-            A collection of my recent work showcasing modern web development,
-            mobile applications, and full-stack solutions.
+            Real-world launches across web and mobile - each built with
+            attention to performance, accessibility, and conversion.
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div
-          className="flex flex-wrap justify-center gap-4 mb-12 animate-slide-up"
-          style={{ animationDelay: "0.2s" }}
-        >
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
           {filters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-full font-bold transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full border transition-all duration-300 text-sm font-semibold ${
                 activeFilter === filter.id
                   ? "bg-gradient-to-r from-sky-600 to-sky-800 text-white shadow-lg"
                   : "bg-white/70 backdrop-blur-md border border-sky-500/30 text-slate-600 hover:text-white hover:border-sky-500/50"
               }`}
             >
-              {filter.label} ({filter.count})
+              {filter.label}{" "}
+              <span className="text-xs font-bold opacity-70">
+                ({filter.count})
+              </span>
             </button>
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {filteredProjects.map((project, index) => (
             <Card
               key={project.id}
@@ -207,7 +205,7 @@ export function Projects() {
                   <div className="flex items-center gap-2">
                     {getCategoryIcon(project.category)}
                     <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                      {project.category}
+                      {categoryLabels[project.category]}
                     </span>
                   </div>
                   {project.featured && (
@@ -223,19 +221,28 @@ export function Projects() {
 
               <CardContent className="space-y-4">
                 {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-sky-100 to-sky-200 rounded-lg border border-sky-500/20 overflow-hidden group-hover:border-sky-500/40 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-transparent" />
-                  <div className="absolute top-3 left-3 flex gap-2">
-                    <div className="w-3 h-3 bg-sky-500 rounded-full" />
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                    <div className="w-3 h-3 bg-green-500 rounded-full" />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Code className="w-12 h-12 text-sky-400 mx-auto mb-2" />
-                      <p className="text-slate-500 text-sm">Project Preview</p>
-                    </div>
-                  </div>
+                <div
+                  className={`relative h-48 rounded-lg border border-sky-500/20 overflow-hidden group-hover:border-sky-500/40 transition-all duration-300 ${
+                    project.imageFit === "contain"
+                      ? "bg-white/90 flex items-center justify-center"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt}
+                    fill
+                    className={
+                      project.imageFit === "contain"
+                        ? "object-contain"
+                        : "object-cover"
+                    }
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 45vw, 90vw"
+                    priority={index === 0}
+                  />
+                  {project.imageFit !== "contain" && (
+                    <div className="absolute inset-0 bg-gradient-to-b from-sky-900/10 via-transparent to-slate-900/20" />
+                  )}
                 </div>
 
                 {/* Description */}
@@ -255,40 +262,41 @@ export function Projects() {
                   ))}
                 </div>
 
-                {/* Stats */}
-                {/*   <div className="flex items-center justify-between text-sm text-slate-500">
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="font-bold">{project.stars}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Eye className="w-4 h-4" />
-                      <span className="font-bold">{project.views}k</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    <span className="font-bold">{project.year}</span>
-                  </div>
-                </div> */}
-
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
                   <Button
                     size="sm"
                     className="flex-1 bg-sky-600 hover:bg-sky-700 text-white group/btn"
+                    asChild
                   >
-                    <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:translate-x-0.5 transition-transform" />
-                    Live Demo
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                      {project.primaryLabel}
+                    </a>
                   </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="border-sky-500/50 text-sky-400 hover:text-white hover:bg-sky-600/20"
-                  >
-                    <Github className="w-4 h-4" />
-                  </Button>
+                  {project.secondaryUrl && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-sky-500/50 text-sky-500 hover:text-white hover:bg-sky-600/20"
+                      asChild
+                    >
+                      <a
+                        href={project.secondaryUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {project.secondaryLabel ?? "Learn More"}
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
