@@ -66,24 +66,24 @@ export function Contact() {
       title: "Email",
       value: "victorinoprince.fe.dev@gmail.com",
       href: "mailto:victorinoprince.fe.dev@gmail.com",
-      color: "from-red-500 to-red-600",
-      bgColor: "bg-red-500/20",
+      color: "from-sky-500 to-sky-600",
+      bgColor: "bg-sky-500/20",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
       value: "Marikina City, Philippines",
       href: "https://maps.google.com/?q=Marikina+City+Philippines",
-      color: "from-red-600 to-red-700",
-      bgColor: "bg-red-600/20",
+      color: "from-sky-600 to-sky-700",
+      bgColor: "bg-sky-600/20",
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
       value: "+63 961 339 4268",
       href: "tel:+639613394268",
-      color: "from-red-700 to-red-800",
-      bgColor: "bg-red-700/20",
+      color: "from-sky-700 to-sky-800",
+      bgColor: "bg-sky-700/20",
     },
   ];
 
@@ -92,22 +92,22 @@ export function Contact() {
       icon: <Github className="w-6 h-6" />,
       name: "GitHub",
       href: "https://github.com/johnprincevictorino",
-      color: "hover:text-gray-300",
-      bgColor: "hover:bg-gray-800",
+      color: "hover:text-slate-700",
+      bgColor: "hover:bg-slate-100",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       name: "LinkedIn",
       href: "https://linkedin.com/in/johnprincevictorino",
-      color: "hover:text-red-400",
-      bgColor: "hover:bg-red-900/30",
+      color: "hover:text-sky-500",
+      bgColor: "hover:bg-sky-100",
     },
     {
       icon: <ExternalLink className="w-6 h-6" />,
       name: "Portfolio",
       href: "https://johnprince.dev",
-      color: "hover:text-blue-400",
-      bgColor: "hover:bg-blue-900/30",
+      color: "hover:text-sky-500",
+      bgColor: "hover:bg-sky-100",
     },
   ];
 
@@ -118,11 +118,11 @@ export function Contact() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16 animate-slide-up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 text-shadow">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 text-shadow">
             CONTACT ME
           </h2>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full mb-6 animate-glow" />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 font-medium">
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-700 mx-auto rounded-full mb-6 animate-glow" />
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto px-4 font-medium">
             Ready to bring your ideas to life? Let's discuss your next project
             and create something exceptional together.
           </p>
@@ -132,10 +132,10 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-6 md:space-y-8 animate-slide-left">
             <div>
-              <h3 className="text-xl md:text-2xl font-black text-white mb-4 md:mb-6">
+              <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-4 md:mb-6">
                 LET'S WORK TOGETHER
               </h3>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">
                 I'm always interested in new opportunities and exciting
                 projects. Whether you have a question, want to collaborate, or
                 just want to say hello, I'd love to hear from you!
@@ -146,7 +146,7 @@ export function Contact() {
               {contactInfo.map((info, index) => (
                 <Card
                   key={index}
-                  className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-md hover:shadow-lg transition-all duration-300 hover:neon-glow group"
+                  className="bg-white/70 backdrop-blur-md border border-sky-500/30 shadow-md hover:shadow-lg transition-all duration-300 hover:neon-glow group"
                 >
                   <CardContent className="p-4 md:p-6">
                     <div className="flex items-center space-x-3 md:space-x-4">
@@ -156,12 +156,12 @@ export function Contact() {
                         {info.icon}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h4 className="font-bold text-white text-sm md:text-base">
+                        <h4 className="font-bold text-slate-900 text-sm md:text-base">
                           {info.title}
                         </h4>
                         <a
                           href={info.href}
-                          className="text-gray-300 hover:text-red-400 transition-colors duration-200 text-sm md:text-base break-all"
+                          className="text-slate-600 hover:text-sky-400 transition-colors duration-200 text-sm md:text-base break-all"
                         >
                           {info.value}
                         </a>
@@ -173,7 +173,7 @@ export function Contact() {
             </div>
 
             <div className="pt-6">
-              <h4 className="font-bold text-white mb-4">FOLLOW ME</h4>
+              <h4 className="font-bold text-slate-900 mb-4">FOLLOW ME</h4>
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -181,7 +181,7 @@ export function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-4 bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-gray-300 ${social.color} ${social.bgColor} text-center group`}
+                    className={`p-4 bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-slate-600 ${social.color} ${social.bgColor} text-center group`}
                     aria-label={social.name}
                   >
                     <div className="mb-2">{social.icon}</div>
@@ -193,14 +193,14 @@ export function Contact() {
 
             {/* Availability Status */}
             <div className="pt-6">
-              <div className="bg-black/40 backdrop-blur-md border border-green-500/30 rounded-xl p-4">
+              <div className="bg-white/70 backdrop-blur-md border border-green-500/30 rounded-xl p-4">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                   <div>
-                    <h4 className="font-bold text-white text-sm">
+                    <h4 className="font-bold text-slate-900 text-sm">
                       Available for new opportunities
                     </h4>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-slate-500 text-xs">
                       Response time: Within 24 hours
                     </p>
                   </div>
@@ -210,10 +210,10 @@ export function Contact() {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-lg animate-slide-right">
+          <Card className="bg-white/70 backdrop-blur-md border border-sky-500/30 shadow-lg animate-slide-right">
             <CardHeader className="pb-4 md:pb-6">
-              <CardTitle className="text-xl md:text-2xl font-black text-white flex items-center gap-2">
-                <MessageCircle className="w-6 h-6 text-red-400" />
+              <CardTitle className="text-xl md:text-2xl font-black text-slate-900 flex items-center gap-2">
+                <MessageCircle className="w-6 h-6 text-sky-400" />
                 SEND A MESSAGE
               </CardTitle>
             </CardHeader>
@@ -223,7 +223,7 @@ export function Contact() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-bold text-gray-300 mb-2"
+                      className="block text-sm font-bold text-slate-600 mb-2"
                     >
                       Name *
                     </label>
@@ -234,14 +234,14 @@ export function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                      className="w-full bg-white/80 border-sky-200 text-slate-700 placeholder-slate-400 focus:border-sky-500 focus:ring-sky-500"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-bold text-gray-300 mb-2"
+                      className="block text-sm font-bold text-slate-600 mb-2"
                     >
                       Email *
                     </label>
@@ -252,7 +252,7 @@ export function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                      className="w-full bg-white/80 border-sky-200 text-slate-700 placeholder-slate-400 focus:border-sky-500 focus:ring-sky-500"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -261,7 +261,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-bold text-gray-300 mb-2"
+                    className="block text-sm font-bold text-slate-600 mb-2"
                   >
                     Subject *
                   </label>
@@ -272,7 +272,7 @@ export function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                    className="w-full bg-white/80 border-sky-200 text-slate-700 placeholder-slate-400 focus:border-sky-500 focus:ring-sky-500"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -280,7 +280,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-bold text-gray-300 mb-2"
+                    className="block text-sm font-bold text-slate-600 mb-2"
                   >
                     Message *
                   </label>
@@ -290,7 +290,7 @@ export function Contact() {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full min-h-[120px] bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                    className="w-full min-h-[120px] bg-white/80 border-sky-200 text-slate-700 placeholder-slate-400 focus:border-sky-500 focus:ring-sky-500"
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </div>
@@ -298,7 +298,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white py-4 text-lg font-black rounded-full transition-all duration-300 neon-glow hover:neon-glow-red border border-red-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group w-full bg-gradient-to-r from-sky-600 to-sky-800 hover:from-sky-700 hover:to-sky-900 text-white py-4 text-lg font-black rounded-full transition-all duration-300 neon-glow hover:neon-glow-red border border-sky-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
@@ -319,10 +319,10 @@ export function Contact() {
 
         {/* Footer */}
         <div
-          className="text-center mt-16 pt-8 border-t border-red-500/30 animate-slide-up"
+          className="text-center mt-16 pt-8 border-t border-sky-500/30 animate-slide-up"
           style={{ animationDelay: "0.5s" }}
         >
-          <p className="text-gray-400 font-medium">
+          <p className="text-slate-500 font-medium">
             © {new Date().getFullYear()} John Prince Victorino. Built with
             Next.js and Tailwind CSS.
           </p>

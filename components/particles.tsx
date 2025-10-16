@@ -43,10 +43,10 @@ export function Particles() {
     const initParticles = () => {
       const particles: Particle[] = [];
       const colors = [
-        "rgba(220, 38, 38, 0.4)", // Red
-        "rgba(185, 28, 28, 0.4)", // Dark Red
-        "rgba(239, 68, 68, 0.4)", // Light Red
-        "rgba(153, 27, 27, 0.4)", // Very Dark Red
+        "rgba(148, 210, 255, 0.4)", // Soft Sky
+        "rgba(125, 211, 252, 0.35)", // Light Azure
+        "rgba(56, 189, 248, 0.35)", // Bright Cyan
+        "rgba(14, 165, 233, 0.3)", // Deep Sky
       ];
 
       for (let i = 0; i < 60; i++) {
@@ -95,8 +95,8 @@ export function Particles() {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(220, 38, 38, ${
-              0.15 * (1 - distance / 120)
+            ctx.strokeStyle = `rgba(56, 189, 248, ${
+              0.12 * (1 - distance / 120)
             })`;
             ctx.lineWidth = 0.8;
             ctx.stroke();

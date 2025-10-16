@@ -86,7 +86,7 @@ export function FloatingElements() {
         >
           {element.type === "circle" && (
             <div
-              className="rounded-full bg-gradient-to-br from-red-600/30 to-red-800/30"
+              className="rounded-full bg-gradient-to-br from-sky-200/40 to-sky-400/30"
               style={{
                 width: element.size,
                 height: element.size,
@@ -95,7 +95,7 @@ export function FloatingElements() {
           )}
           {element.type === "square" && (
             <div
-              className="bg-gradient-to-br from-red-700/30 to-red-900/30"
+              className="bg-gradient-to-br from-sky-300/40 to-sky-500/30"
               style={{
                 width: element.size,
                 height: element.size,
@@ -104,7 +104,7 @@ export function FloatingElements() {
           )}
           {element.type === "triangle" && (
             <div
-              className="text-red-500/30 font-mono font-bold"
+              className="text-sky-500/30 font-mono font-bold"
               style={{
                 fontSize: `${element.size * 0.6}px`,
                 lineHeight: 1,

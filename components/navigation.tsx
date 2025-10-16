@@ -28,8 +28,8 @@ export function Navigation() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? "bg-black shadow-2xl shadow-red-500/20 border-b border-red-500/30"
-          : "bg-black/95 backdrop-blur-sm"
+          ? "bg-white shadow-2xl shadow-sky-200/40 border-b border-sky-200/60"
+          : "bg-white/80 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,16 +39,16 @@ export function Navigation() {
               <div className="text-3xl font-bold text-gradient neon-glow text-shadow transition-all duration-300 group-hover:scale-110">
                 JPV
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-              <div className="absolute inset-0 bg-red-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-sky-400 rounded-full animate-pulse"></div>
+              <div className="absolute inset-0 bg-sky-300/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div
               className="hidden sm:flex items-center gap-2 animate-slide-down"
               style={{ animationDelay: "0.1s" }}
             >
-              <Shield className="w-5 h-5 text-red-400 animate-flicker" />
+              <Shield className="w-5 h-5 text-sky-500 animate-flicker" />
               <span
-                className="text-sm font-medium text-red-300 animate-slide-right"
+                className="text-sm font-medium text-sky-400 animate-slide-right"
                 style={{ animationDelay: "0.2s" }}
               ></span>
             </div>
@@ -60,13 +60,13 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-300 hover:text-red-400 transition-all duration-300 font-medium relative group animate-slide-down"
+                className="text-slate-600 hover:text-sky-500 transition-all duration-300 font-medium relative group animate-slide-down"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-500 to-red-700 transition-all duration-300 group-hover:w-full"></span>
-                <span className="absolute -top-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-500 to-red-700 transition-all duration-300 group-hover:w-full"></span>
-                <div className="absolute inset-0 bg-red-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 to-cyan-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -top-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 to-cyan-500 transition-all duration-300 group-hover:w-full"></span>
+                <div className="absolute inset-0 bg-sky-200/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
               </a>
             ))}
           </div>
@@ -76,7 +76,7 @@ export function Navigation() {
             className="hidden md:block animate-slide-down"
             style={{ animationDelay: "0.8s" }}
           >
-            <Button className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white px-6 py-2 rounded-full border border-red-500/30 hover:neon-glow transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25">
+            <Button className="bg-gradient-to-r from-sky-600 to-sky-800 hover:from-sky-700 hover:to-sky-900 text-white px-6 py-2 rounded-full border border-sky-500/30 hover:neon-glow transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-sky-500/25">
               <Zap className="w-4 h-4 mr-2 animate-pulse-slow" />
               HIRE ME
             </Button>
@@ -86,7 +86,7 @@ export function Navigation() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-gray-300 hover:text-red-400 hover:bg-red-400/10 border border-red-500/20 transition-all duration-300 hover:scale-110 animate-slide-down"
+            className="md:hidden text-slate-600 hover:text-sky-500 hover:bg-sky-100 border border-sky-200/60 transition-all duration-300 hover:scale-110 animate-slide-down"
             style={{ animationDelay: "0.9s" }}
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -100,13 +100,13 @@ export function Navigation() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-b border-red-500/30 shadow-2xl shadow-red-500/20 animate-slide-down">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/90 backdrop-blur-md border-b border-sky-200/60 shadow-2xl shadow-sky-200/40 animate-slide-down">
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item, index) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-all duration-300 border border-transparent hover:border-red-500/30 hover:scale-105 animate-slide-left"
+                  className="block px-4 py-3 text-lg font-medium text-slate-600 hover:text-sky-500 hover:bg-sky-100 rounded-lg transition-all duration-300 border border-transparent hover:border-sky-200/60 hover:scale-105 animate-slide-left"
                   style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                   onClick={() => setIsOpen(false)}
                 >
@@ -114,10 +114,10 @@ export function Navigation() {
                 </a>
               ))}
               <div
-                className="pt-4 border-t border-red-500/20 animate-slide-up"
+                className="pt-4 border-t border-sky-200/60 animate-slide-up"
                 style={{ animationDelay: "0.6s" }}
               >
-                <Button className="w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white py-3 rounded-full border border-red-500/30 hover:neon-glow transition-all duration-300 hover:scale-105">
+                <Button className="w-full bg-gradient-to-r from-sky-400 to-cyan-500 hover:from-sky-500 hover:to-cyan-600 text-white py-3 rounded-full border border-sky-200/60 hover:neon-glow transition-all duration-300 hover:scale-105">
                   <Zap className="w-4 h-4 mr-2 animate-pulse-slow" />
                   HIRE ME
                 </Button>

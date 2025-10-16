@@ -63,10 +63,10 @@ export function About() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16 animate-slide-up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 text-shadow">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 text-shadow">
             ABOUT ME
           </h2>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full animate-glow" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-sky-500 to-sky-700 mx-auto rounded-full animate-glow" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -75,8 +75,8 @@ export function About() {
             {/* Profile Picture - Centered and Prominent */}
             <div className="flex justify-center">
               <div className="relative group">
-                <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-red-500 to-red-700 p-1 animate-glow">
-                  <div className="w-full h-full rounded-full bg-black/90 backdrop-blur-md border border-red-500/30 flex items-center justify-center overflow-hidden">
+                <div className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-sky-500 to-sky-700 p-1 animate-glow">
+                  <div className="w-full h-full rounded-full bg-white/85 backdrop-blur-md border border-sky-500/30 flex items-center justify-center overflow-hidden">
                     {/* Profile Picture */}
                     <img
                       src="/prince4.jpg"
@@ -85,16 +85,16 @@ export function About() {
                     />
                   </div>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center animate-pulse">
                   <div className="w-3 h-3 bg-white rounded-full"></div>
                 </div>
               </div>
             </div>
 
-            <div className="prose prose-lg text-gray-300">
+            <div className="prose prose-lg text-slate-600">
               <p className="text-lg md:text-xl leading-relaxed font-medium">
                 Hello! I'm{" "}
-                <span className="font-bold text-red-100">
+                <span className="font-bold text-sky-600">
                   John Prince Victorino
                 </span>
                 , a passionate and dedicated frontend developer who started my
@@ -126,59 +126,59 @@ export function About() {
           <div className="space-y-6 md:space-y-8 order-2 lg:order-2 animate-slide-right">
             {/* Skills Highlights */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-4 text-center hover:neon-glow transition-all duration-300">
-                <Code className="w-8 h-8 text-red-400 mx-auto mb-2" />
-                <div className="text-sm font-bold text-gray-300">
+              <div className="bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl p-4 text-center hover:neon-glow transition-all duration-300">
+                <Code className="w-8 h-8 text-sky-400 mx-auto mb-2" />
+                <div className="text-sm font-bold text-slate-600">
                   FRONTEND DEVELOPMENT
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-4 text-center hover:neon-glow-red transition-all duration-300">
-                <Smartphone className="w-8 h-8 text-red-400 mx-auto mb-2" />
-                <div className="text-sm font-bold text-gray-300">
+              <div className="bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl p-4 text-center hover:neon-glow-red transition-all duration-300">
+                <Smartphone className="w-8 h-8 text-sky-400 mx-auto mb-2" />
+                <div className="text-sm font-bold text-slate-600">
                   MOBILE APP DEVELOPMENT
                 </div>
               </div>
             </div>
 
             {/* Personal Info Cards */}
-            <Card className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow group">
+            <Card className="bg-white/70 backdrop-blur-md border border-sky-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow group">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-red-500/20 rounded-full group-hover:bg-red-500/30 transition-colors">
-                    <GraduationCap className="w-6 h-6 text-red-400" />
+                  <div className="p-3 bg-sky-500/20 rounded-full group-hover:bg-sky-500/30 transition-colors">
+                    <GraduationCap className="w-6 h-6 text-sky-400" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-white">EDUCATION</h3>
-                    <p className="text-gray-300">BS Information Technology</p>
+                    <h3 className="font-bold text-lg text-slate-900">EDUCATION</h3>
+                    <p className="text-slate-600">BS Information Technology</p>
                   </div>
                 </div>
-                <p className="text-gray-400 ml-16">EARIST (Manila Campus)</p>
+                <p className="text-slate-500 ml-16">EARIST (Manila Campus)</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow-red group">
+            <Card className="bg-white/70 backdrop-blur-md border border-sky-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow-red group">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-red-500/20 rounded-full group-hover:bg-red-500/30 transition-colors">
-                    <Calendar className="w-6 h-6 text-red-400" />
+                  <div className="p-3 bg-sky-500/20 rounded-full group-hover:bg-sky-500/30 transition-colors">
+                    <Calendar className="w-6 h-6 text-sky-400" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-white">AGE</h3>
-                    <p className="text-gray-300">23 years old</p>
+                    <h3 className="font-bold text-lg text-slate-900">AGE</h3>
+                    <p className="text-slate-600">23 years old</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow-dark-red group">
+            <Card className="bg-white/70 backdrop-blur-md border border-sky-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow-dark-red group">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-red-500/20 rounded-full group-hover:bg-red-500/30 transition-colors">
-                    <MapPin className="w-6 h-6 text-red-400" />
+                  <div className="p-3 bg-sky-500/20 rounded-full group-hover:bg-sky-500/30 transition-colors">
+                    <MapPin className="w-6 h-6 text-sky-400" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-white">LOCATION</h3>
-                    <p className="text-gray-300">Marikina City, Philippines</p>
+                    <h3 className="font-bold text-lg text-slate-900">LOCATION</h3>
+                    <p className="text-slate-600">Marikina City, Philippines</p>
                   </div>
                 </div>
               </CardContent>
@@ -191,34 +191,34 @@ export function About() {
           className="mt-16 animate-slide-up"
           style={{ animationDelay: "0.3s" }}
         >
-          <h3 className="text-2xl md:text-3xl font-black text-white text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-black text-slate-900 text-center mb-8">
             WORK EXPERIENCE
           </h3>
           <div className="grid gap-6">
             {experiences.map((exp, index) => (
               <Card
                 key={index}
-                className="bg-black/40 backdrop-blur-md border border-red-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow group"
+                className="bg-white/70 backdrop-blur-md border border-sky-500/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:neon-glow group"
                 style={{ animationDelay: `${0.4 + index * 0.1}s` }}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-red-500/20 rounded-full group-hover:bg-red-500/30 transition-colors flex-shrink-0">
-                      <div className="text-red-400">{exp.icon}</div>
+                    <div className="p-3 bg-sky-500/20 rounded-full group-hover:bg-sky-500/30 transition-colors flex-shrink-0">
+                      <div className="text-sky-400">{exp.icon}</div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-white">
+                        <h4 className="font-bold text-lg text-slate-900">
                           {exp.role}
                         </h4>
-                        <span className="text-sm text-gray-400 font-medium">
+                        <span className="text-sm text-slate-500 font-medium">
                           {exp.period}
                         </span>
                       </div>
-                      <p className="text-red-300 font-semibold mb-2">
+                      <p className="text-sky-300 font-semibold mb-2">
                         {exp.company}
                       </p>
-                      <p className="text-gray-300">{exp.description}</p>
+                      <p className="text-slate-600">{exp.description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -232,23 +232,23 @@ export function About() {
           className="mt-16 animate-slide-up"
           style={{ animationDelay: "0.6s" }}
         >
-          <h3 className="text-2xl md:text-3xl font-black text-white text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-black text-slate-900 text-center mb-8">
             KEY ACHIEVEMENTS
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow transition-all duration-300 group"
+                className="bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl p-6 text-center hover:neon-glow transition-all duration-300 group"
                 style={{ animationDelay: `${0.7 + index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-sky-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="text-white">{achievement.icon}</div>
                 </div>
-                <h4 className="text-lg font-black text-white mb-2">
+                <h4 className="text-lg font-black text-slate-900 mb-2">
                   {achievement.title}
                 </h4>
-                <p className="text-gray-300 text-sm font-medium">
+                <p className="text-slate-600 text-sm font-medium">
                   {achievement.description}
                 </p>
               </div>
@@ -261,17 +261,17 @@ export function About() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 animate-slide-up"
           style={{ animationDelay: "0.8s" }}
         >
-          <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow transition-all duration-300">
-            <div className="text-3xl font-black text-white mb-2">1+</div>
-            <div className="text-gray-300 font-bold">YEAR OF EXPERIENCE</div>
+          <div className="bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl p-6 text-center hover:neon-glow transition-all duration-300">
+            <div className="text-3xl font-black text-slate-900 mb-2">1+</div>
+            <div className="text-slate-600 font-bold">YEAR OF EXPERIENCE</div>
           </div>
-          <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow-red transition-all duration-300">
-            <div className="text-3xl font-black text-white mb-2">8+</div>
-            <div className="text-gray-300 font-bold">PROJECTS COMPLETED</div>
+          <div className="bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl p-6 text-center hover:neon-glow-red transition-all duration-300">
+            <div className="text-3xl font-black text-slate-900 mb-2">8+</div>
+            <div className="text-slate-600 font-bold">PROJECTS COMPLETED</div>
           </div>
-          <div className="bg-black/40 backdrop-blur-md border border-red-500/30 rounded-xl p-6 text-center hover:neon-glow-dark-red transition-all duration-300">
-            <div className="text-3xl font-black text-white mb-2">100%</div>
-            <div className="text-gray-300 font-bold">CLIENT SATISFACTION</div>
+          <div className="bg-white/70 backdrop-blur-md border border-sky-500/30 rounded-xl p-6 text-center hover:neon-glow-dark-red transition-all duration-300">
+            <div className="text-3xl font-black text-slate-900 mb-2">100%</div>
+            <div className="text-slate-600 font-bold">CLIENT SATISFACTION</div>
           </div>
         </div>
       </div>
