@@ -35,7 +35,7 @@ const projectData: Project[] = [
     id: 1,
     title: "Iskanme",
     description:
-      "Digital rental marketplace for renters and property owners with verified listings, dashboards, and guided onboarding flows.",
+      "Landing page for the upcoming Iskanme marketplace app, focused on safer listings, verified owners, and secure onboarding.",
     image: "/projects/iskan_web.jpg",
     imageAlt: "Iskanme web application home screen showcasing rental listings",
     imageFit: "cover",
@@ -50,7 +50,7 @@ const projectData: Project[] = [
     id: 2,
     title: "House of Mix",
     description:
-      "Mixology collective website featuring seasonal menus, event bookings, and a CMS-powered blog for cocktail enthusiasts.",
+      "Subscription site for mix enthusiasts offering curated playlists, exclusive downloads, and content for DJs.",
     image: "/projects/houseofmix_web.jpg",
     imageAlt: "House of Mix hero section featuring call-to-action and DJ imagery",
     imageFit: "cover",
@@ -65,7 +65,7 @@ const projectData: Project[] = [
     id: 3,
     title: "Outsourcee Landing",
     description:
-      "Conversion-focused marketing site for the Outsourcee talent marketplace highlighting services, testimonials, and lead capture.",
+      "Landing page promoting the Outsourcee mobile app, highlighting current capabilities and forthcoming features.",
     image: "/projects/outsourcee_web.jpg",
     imageAlt: "Outsourcee marketing site hero featuring headline and mobile mockups",
     imageFit: "cover",

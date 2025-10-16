@@ -25,7 +25,7 @@ export function Hero() {
       name: "Iskanme",
       tech: ["Next.js", "TypeScript", "Supabase"],
       description:
-        "Rental marketplace matching property owners with verified renters and streamlined onboarding.",
+        "Landing page for the upcoming Iskanme marketplace app, focused on safer listings, verified owners, and secure onboarding.",
       stars: 4.9,
       link: "https://www.iskanme.app",
       ctaLabel: "View Site",
@@ -37,7 +37,7 @@ export function Hero() {
       name: "House of Mix",
       tech: ["Next.js", "Tailwind CSS", "Contentful"],
       description:
-        "Experiential web presence for a mixology collective featuring menus, bookings, and editorial content.",
+        "Subscription hub for mix lovers with curated playlists, exclusive downloads, and content tailored for DJs.",
       stars: 4.8,
       link: "https://houseofmix.club",
       ctaLabel: "Explore Website",
@@ -49,7 +49,7 @@ export function Hero() {
       name: "Outsourcee Landing",
       tech: ["Next.js", "Tailwind CSS", "Vercel"],
       description:
-        "Lead-generation site for the Outsourcee talent marketplace with testimonials and conversion funnels.",
+        "Landing page promoting the Outsourcee mobile app, showcasing released capabilities and upcoming feature drops.",
       stars: 4.7,
       link: "https://outsourcee.app",
       ctaLabel: "Visit Landing Page",
