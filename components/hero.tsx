@@ -11,6 +11,8 @@ import {
   Star,
   TrendingUp,
 } from "lucide-react";
+import ElectricBorder from "@/components/ElectricBorder";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Particles } from "./particles";
 import { FloatingElements } from "./floating-elements";
@@ -145,9 +147,9 @@ export function Hero() {
             <div className="animate-slide-down">
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/70 backdrop-blur-md border border-sky-500/30">
                 <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
-                <span className="text-sm font-bold text-sky-300 uppercase tracking-wider">
+                {/*  <span className="text-sm font-bold text-sky-300 uppercase tracking-wider">
                   Available for new opportunities
-                </span>
+                </span> */}
               </div>
             </div>
 
@@ -180,7 +182,7 @@ export function Hero() {
                 className="animate-slide-up"
                 style={{ animationDelay: "0.3s" }}
               >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-sky-100">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-sky-400">
                   FRONTEND DEVELOPER
                 </h2>
               </div>
@@ -264,19 +266,25 @@ export function Hero() {
               style={{ animationDelay: "0.7s" }}
             >
               <div className="text-center">
-                <div className="text-2xl font-black text-slate-900 mb-1">1+</div>
+                <div className="text-2xl font-black text-slate-900 mb-1">
+                  1+
+                </div>
                 <div className="text-xs text-slate-500 font-medium">
                   YEAR OF EXPERIENCE
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-black text-slate-900 mb-1">8+</div>
+                <div className="text-2xl font-black text-slate-900 mb-1">
+                  8+
+                </div>
                 <div className="text-xs text-slate-500 font-medium">
                   PROJECTS COMPLETED
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-black text-slate-900 mb-1">100%</div>
+                <div className="text-2xl font-black text-slate-900 mb-1">
+                  100%
+                </div>
                 <div className="text-xs text-slate-500 font-medium">
                   CLIENT SATISFACTION
                 </div>
@@ -286,86 +294,93 @@ export function Hero() {
 
           {/* Right Side - Featured Project */}
           <div className="relative animate-slide-right">
-            {/* Featured Project Card */}
-            <div className="relative bg-white/80 backdrop-blur-md border border-sky-500/30 rounded-2xl p-6 hover:neon-glow transition-all duration-500 group">
-              <div className="absolute -top-2 -right-2 w-4 h-4 bg-sky-500 rounded-full animate-pulse" />
+            <ElectricBorder
+              color="#7df9ff"
+              speed={1.1}
+              chaos={0.55}
+              thickness={2.5}
+              className="block rounded-[28px]"
+              style={{ borderRadius: 28 }}
+            >
+              <div className="relative h-full rounded-[24px] border border-sky-500/20 bg-white/85 p-6 shadow-md backdrop-blur">
+                <div className="absolute -top-2 -right-2 h-4 w-4 animate-pulse rounded-full bg-sky-500" />
 
-              <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-black text-slate-900">
-                    {projects[currentProject].name}
-                  </h3>
-                  <div className="flex items-center gap-1 text-yellow-400">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span className="text-sm font-bold">
-                      {projects[currentProject].stars.toFixed(1)}
-                    </span>
+                <div className="mb-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-black text-slate-900">
+                      {projects[currentProject].name}
+                    </h3>
+                    <div className="flex items-center gap-1 text-yellow-400">
+                      <Star className="h-4 w-4 fill-current" />
+                      <span className="text-sm font-bold">
+                        {projects[currentProject].stars.toFixed(1)}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <p className="text-sm text-slate-500 mb-3">
-                  {projects[currentProject].description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {projects[currentProject].tech.map((tech, index) => (
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    {projects[currentProject].description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {projects[currentProject].tech.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-xs font-bold rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30"
+                        className="rounded-full border border-sky-500/30 bg-sky-500/15 px-2 py-1 text-xs font-bold text-sky-400"
                       >
                         {tech}
                       </span>
                     ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Project Preview */}
-              <div
-                className={`relative h-48 rounded-lg border border-sky-500/20 overflow-hidden transition-all duration-300 group-hover:border-sky-500/40 ${
-                  projects[currentProject].imageFit === "contain"
-                    ? "bg-white/90 flex items-center justify-center"
-                    : ""
-                }`}
-              >
-                <Image
-                  src={projects[currentProject].image}
-                  alt={projects[currentProject].imageAlt}
-                  fill
-                  className={
+                <div
+                  className={cn(
+                    "relative h-48 overflow-hidden rounded-lg border border-sky-500/20 transition-all duration-300",
                     projects[currentProject].imageFit === "contain"
-                      ? "object-contain"
-                      : "object-cover"
-                  }
-                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 90vw"
-                />
-                {projects[currentProject].imageFit !== "contain" && (
-                  <div className="absolute inset-0 bg-gradient-to-b from-sky-900/20 via-transparent to-slate-900/30" />
-                )}
-              </div>
-
-              <div className="mt-4 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-sm text-slate-500">
-                  <TrendingUp className="w-4 h-4 text-green-400" />
-                  <span>Featured Project</span>
-                </div>
-                <Button
-                  size="sm"
-                  className="bg-sky-600 hover:bg-sky-700 text-white"
-                  asChild
+                      ? "flex items-center justify-center bg-white/90"
+                      : "group-hover:border-sky-500/40"
+                  )}
                 >
-                  <a
-                    href={projects[currentProject].link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {projects[currentProject].ctaLabel ?? "View Live"}
-                  </a>
-                </Button>
-              </div>
-            </div>
+                  <Image
+                    src={projects[currentProject].image}
+                    alt={projects[currentProject].imageAlt}
+                    fill
+                    className={
+                      projects[currentProject].imageFit === "contain"
+                        ? "object-contain"
+                        : "object-cover"
+                    }
+                    sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 90vw"
+                  />
+                  {projects[currentProject].imageFit !== "contain" && (
+                    <div className="absolute inset-0 bg-gradient-to-b from-sky-900/20 via-transparent to-slate-900/30" />
+                  )}
+                </div>
 
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-sky-500/30 rounded-full blur-sm animate-float" />
+                <div className="mt-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-sm text-slate-500">
+                    <TrendingUp className="h-4 w-4 text-green-400" />
+                    <span>Featured Project</span>
+                  </div>
+                  <Button
+                    size="sm"
+                    className="bg-sky-600 text-white hover:bg-sky-700"
+                    asChild
+                  >
+                    <a
+                      href={projects[currentProject].link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {projects[currentProject].ctaLabel ?? "View Live"}
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </ElectricBorder>
+
+            <div className="absolute -top-4 -right-4 h-16 w-16 animate-float rounded-full bg-sky-500/30 blur-sm" />
             <div
-              className="absolute -bottom-8 -left-8 w-12 h-12 bg-sky-600/20 rounded-full animate-float"
+              className="absolute -bottom-8 -left-8 h-12 w-12 animate-float rounded-full bg-sky-600/20"
               style={{ animationDelay: "1s" }}
             />
           </div>
@@ -373,7 +388,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-     {/*  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+      {/*  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
         <div className="w-6 h-10 border-2 border-sky-500 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-sky-500 rounded-full mt-2 animate-pulse"></div>
         </div>
@@ -381,13 +396,3 @@ export function Hero() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
